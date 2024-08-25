@@ -1,4 +1,4 @@
-module github/scottjab/nntp
+module github.com/scottjab/nntp
 
 go 1.23.0
 
