@@ -57,8 +57,8 @@ type Conn struct {
 // make the connection.
 //
 // Example:
-//   conn, err := nntp.Dial("tcp", "my.news:nntp")
 //
+//	conn, err := nntp.Dial("tcp", "my.news:nntp")
 func New(network, addr string) (*Conn, error) {
 	c, err := textproto.Dial(network, addr)
 	if err != nil {
@@ -401,10 +401,9 @@ func (c *Conn) Date() (time.Time, error) {
 // List returns a list of groups present on the server.
 // Valid forms are:
 //
-//   List() - return active groups
-//   List(keyword) - return different kinds of information about groups
-//   List(keyword, pattern) - filter groups against a glob-like pattern called a wildmat
-//
+//	List() - return active groups
+//	List(keyword) - return different kinds of information about groups
+//	List(keyword, pattern) - filter groups against a glob-like pattern called a wildmat
 func (c *Conn) List(a ...string) ([]string, error) {
 	if len(a) > 2 {
 		return nil, ProtocolError("List only takes up to 2 arguments")
